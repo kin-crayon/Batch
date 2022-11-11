@@ -30,7 +30,7 @@ if NOT EXIST %MyDir%\File\back goto MDFile
 
 :LOCK
 :: 压缩
-start  /wait  ""  "%WinRarDir%\WinRAR.exe"  a -ep1 -o+ -r -ibck -pgen@song123 "%MyDir%\File\back\%Name%.rar"  "%MyDir%\File\备忘"
+start  /wait  ""  "%WinRarDir%\WinRAR.exe"  a -ep1 -o+ -r -ibck -p密码 "%MyDir%\File\back\%Name%.rar"  "%MyDir%\File\备忘"
 :: 清除TXT件内容并将压缩文件名存入TXT中
 echo %Name%.rar>%MyDir%\File\test.txt
 :: 删除文件夹
@@ -51,7 +51,7 @@ ren "%MyDir%\Control Panel.{0236d120-1531-4950-b23a-7b49dbb03497}" File
 :: 读取文件第一行内容
 for /f %%a in (%MyDir%\File\test.txt) do (
 :: 解压
-start  /wait  ""  "%WinRarDir%\WinRAR.exe"  x  -l -o+ -pgen@song123  F:\HMS\Desktop\File\back\%%a  F:\HMS\Desktop\File
+start  /wait  ""  "%WinRarDir%\WinRAR.exe"  x  -l -o+ -p密码  F:\HMS\Desktop\File\back\%%a  F:\HMS\Desktop\File
 echo 解锁成功
 goto End)
 

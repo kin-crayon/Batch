@@ -2,7 +2,7 @@
 chcp 65001
 
 @ECHO OFF
-title 遍历当前目录下所有文件与文件夹123
+title 遍历当前目录下所有文件与文件夹
 ::指定起始文件夹
 set DIR="%cd%"
 echo DIR=%DIR%
